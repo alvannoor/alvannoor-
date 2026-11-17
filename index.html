@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>گروه روشنایی الوان نور | فروشگاه تخصصی نور و روشنایی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary-blue: #0b2559;
+      --primary-dark: #061536;
+      --accent-gold: #e5a93b;
+      --gold-gradient: linear-gradient(135deg, #f7d070 0%, #d49520 100%);
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --radius: 16px;
+      --shadow: 0 10px 25px -5px rgba(11, 37, 89, 0.08);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--primary-blue);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      font-size: 1.4rem;
+      box-shadow: 0 4px 10px rgba(11, 37, 89, 0.25);
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-blue);
+    }
+
+    .brand-text span {
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cart-btn {
+      position: relative;
+      background: #eef2f7;
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-blue);
+      transition: var(--transition);
+    }
+
+    .cart-btn:hover {
+      background: var(--primary-blue);
+      color: #fff;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: var(--accent-gold);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: radial-gradient(circle at top right, #163675 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 5rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(229, 169, 59, 0.15);
+      border: 1px solid var(--accent-gold);
+      color: #f7d070;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+    }
+
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #1a1a1a;
+      box-shadow: 0 4px 15px rgba(212, 149, 32, 0.4);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 149, 32, 0.6);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.25);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #fff;
+    }
+
+    /* Categories / Features */
+    .features {
+      max-width: 1200px;
+      margin: -2.5rem auto 3rem auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .feature-card i {
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+      background: rgba(229, 169, 59, 0.1);
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feature-card h4 {
+      font-size: 1rem;
+      color: var(--primary-blue);
+      margin-bottom: 4px;
+    }
+
+    .feature-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Products Section */
+    .section-title {
+      text-align: center;
+      margin: 4rem 0 2rem 0;
+    }
+
+    .section-title h3 {
+      font-size: 1.8rem;
+      color: var(--primary-blue);
+      font-weight: 800;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 5px;
+    }
+
+    .products-grid {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #edf2f7;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(11, 37, 89, 0.12);
+    }
+
+    .product-img {
+      height: 200px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      color: var(--primary-blue);
+      position: relative;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--accent-gold);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .product-info {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-category {
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .product-info h4 {
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .product-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 12px;
+    }
+
+    .price {
+      font-weight: 800;
+      color: var(--primary-blue);
+      font-size: 1.1rem;
+    }
+
+    .price small {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-right: 3px;
+    }
+
+    .add-to-cart {
+      background: var(--primary-blue);
+      color: #fff;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .add-to-cart:hover {
+      background: var(--accent-gold);
+    }
+
+    /* Contact / Banner */
+    .cta-banner {
+      max-width: 1200px;
+      margin: 5rem auto;
+      padding: 2.5rem;
+      background: linear-gradient(120deg, var(--primary-blue), #1e4287);
+      border-radius: 24px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .cta-text h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .cta-text p {
+      color: #e2e8f0;
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: #94a3b8;
+      padding: 3rem 1.5rem 1.5rem 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-col h5 {
+      color: #fff;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-col a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-gold);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+      font-size: 0.85rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero h2 { font-size: 1.8rem; }
+      .cta-banner { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- هدر و منو -->
+  <header>
+    <div class="navbar">
+      <a href="#" class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-lightbulb"></i>
+        </div>
+        <div class="brand-text">
+          <h1>الوان نور</h1>
+          <span>گروه روشنایی</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">صفحه نخست</a></li>
+        <li><a href="#products">محصولات</a></li>
+        <li><a href="#about">درباره ما</a></li>
+        <li><a href="#contact">تماس و سفارش</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="cart-btn" onclick="showCart()">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- بخش اصلی هیرو -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="hero-badge"><i class="fa-solid fa-bolt"></i> جدیدترین تکنولوژی‌های نورپردازی</span>
+      <h2>درخشش و زیبایی مدرن با گروه روشنایی الوان نور</h2>
+      <p>تولید و عرضه انواع پروژکتور، پنل‌های ال‌ای‌دی، چراغ‌های خطی و نورپردازی حرفه‌ای نما و دکوراسیون با ضمانت کیفیت.</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn btn-gold"><i class="fa-solid fa-bag-shopping"></i> مشاهده محصولات</a>
+        <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-phone"></i> مشاوره تخصصی رایگان</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ویژگی‌ها -->
+  <section class="features">
+    <div class="feature-card">
+      <i class="fa-solid fa-shield-halved"></i>
+      <div>
+        <h4>ضمانت اصالت و کیفیت</h4>
+        <p>گارانتی معتبر تعویض کالا</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-truck-fast"></i>
+      <div>
+        <h4>ارسال سریع</h4>
+        <p>تحویل به سراسر کشور</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-headset"></i>
+      <div>
+        <h4>مشاوره فنی رایگان</h4>
+        <p>محاسبه لوکس و نور محیط</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- محصولات -->
+  <section id="products">
+    <div class="section-title">
+      <h3>پرفروش‌ترین تجهیزات روشنایی</h3>
+      <p>محصولات مدرن و کم‌مصرف برای منازل، دفاتر و پروژه‌های ساختمانی</p>
+    </div>
+
+    <div class="products-grid">
+      <!-- محصول ۱ -->
+      <div class="product-card">
+        <div class="product-img">
+          <span class="product-badge">پرفروش</span>
+          <i class="fa-regular fa-lightbulb"></i>
+        </div>
+        <div class="product-info">
+          <span class="product-category">پنل سقفی</span>
+          <h4>پنل ال‌ای‌دی توکار ۶۰×۶۰</h4>
+          <p>توان ۶۰ وات، نور یکنواخت بدون خیرگی، مناسب فضاهای اداری و مدرن.</p>
+          <div class="product-bottom">
+            <span class="price">۴۸۰,۰۰۰ <small>تومان</small></span>
+            <button class="add-to-cart" onclick="addToCart()"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- محصول ۲ -->
+      <div class="product-card">
+        <div class="product-img">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+        <div class="product-info">
+          <span class="product-category">پروژکتور صنعتی</span>
+          <h4>پروژکتور اس‌ام‌دی ۱۰۰ وات</h4>
+          <p>ضد آب با استاندارد IP66، پرتاب نور عالی مناسب محوطه و نما.</p>
+          <div class="product-bottom">
+            <span class="price">۸۵۰,۰۰۰ <small>تومان</small></span>
+            <button class="add-to-cart" onclick="addToCart()"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- محصول ۳ -->
+      <div class="product-card">
+        <div class="product-img">
+          <span class="product-badge">جدید</span>
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="product-info">
+          <span class="product-category">چراغ خطی</span>
+          <h4>چراغ لاینر مدرن روکار</h4>
+          <p>عرض ۳ سانتی‌متر، رنگ نور آفتابی و مهتابی مناسب طراحی‌های لوکس.</p>
+          <div class="product-bottom">
+            <span class="price">۶۲۰,۰۰۰ <small>تومان</small></span>
+            <button class="add-to-cart" onclick="addToCart()"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- محصول ۴ -->
+      <div class="product-card">
+        <div class="product-img">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+        <div class="product-info">
+          <span class="product-category">نورپردازی دکوراتیو</span>
+          <h4>ریسه نواری هوشمند RGB</h4>
+          <p>کنترل از طریق وای‌فای و اپلیکیشن موبایل، دارای رقص نور با صدا.</p>
+          <div class="product-bottom">
+            <span class="price">۳۹۰,۰۰۰ <small>تومان</small></span>
+            <button class="add-to-cart" onclick="addToCart()"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- بنر ارتباط و مشاوره -->
+  <div class="cta-banner" id="contact">
+    <div class="cta-text">
+      <h3>نیاز به اجرای پروژه یا خرید عمده دارید؟</h3>
+      <p>کارشناسان الوان نور برای طراحی نورپردازی و ثبت سفارش عمده همراه شما هستند.</p>
+    </div>
+    <a href="tel:09120000000" class="btn btn-gold"><i class="fa-solid fa-phone"></i> ۰۹۱۲۰۰۰۰۰۰۰</a>
+  </div>
+
+  <!-- فوتر -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>گروه روشنایی الوان نور</h5>
+        <p style="font-size: 0.85rem; line-height: 1.8;">طراحی، ساخت و پخش لوازم الکتریکی و تجهیزات روشنایی ساختمانی و صنعتی با بهترین استانداردهای روز.</p>
+      </div>
+      <div class="footer-col">
+        <h5>دسترسی سریع</h5>
+        <ul>
+          <li><a href="#products">کاتالوگ محصولات</a></li>
+          <li><a href="#about">پروژه‌های انجام‌شده</a></li>
+          <li><a href="#contact">درخواست نمایندگی</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>راه‌های ارتباطی</h5>
+        <ul>
+          <li><i class="fa-solid fa-location-dot" style="margin-left: 8px;"></i> تهران، لاله زار جنوبی</li>
+          <li><i class="fa-solid fa-phone" style="margin-left: 8px;"></i> ۰۲۱-۳۳۰۰۰۰۰۰</li>
+          <li><i class="fa-solid fa-envelope" style="margin-left: 8px;"></i> info@alvannoor.ir</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© تمامی حقوق برای گروه روشنایی الوان نور محفوظ است.</p>
+    </div>
+  </footer>
+
+  <script>
+    let count = 0;
+    function addToCart() {
+      count++;
+      document.getElementById('cartCount').innerText = count;
+      alert('محصول به سبد خرید اضافه شد!');
+    }
+
+    function showCart() {
+      if (count === 0) {
+        alert('سبد خرید شما خالی است.');
+      } else {
+        alert('شما ' + count + ' کالا در سبد خرید دارید.');
+      }
+    }
+  </script>
+</body>
+</html>
